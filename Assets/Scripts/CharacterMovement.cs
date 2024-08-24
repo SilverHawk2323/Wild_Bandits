@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    public Transform mainCamera;
-
     public float walkSpeed;
-    public float dashPower;
+    public float dashPower; 
     public float crouchSpeed;
     public float jumpPower;
     public float gravity;
@@ -21,6 +19,7 @@ public class CharacterMovement : MonoBehaviour
     public Rigidbody2D rb;
 
     public LayerMask groundedMask;
+    public GameObject checkpoint;
 
 
     // Start is called before the first frame update
@@ -42,9 +41,8 @@ public class CharacterMovement : MonoBehaviour
 
         speedThisFrame = walkSpeed;
 
-        if (Input.GetButtonDown("Dash"))
+        if (Input.GetButtonDown("Dash")) // feel free to comment it out or delete it 
         {
-            //speedThisFrame = runSpeed;
             movementThisFrame.x *= dashPower;
         }
 
@@ -69,12 +67,14 @@ public class CharacterMovement : MonoBehaviour
     }
 
     private void Move (Vector2 movement)
-    {
-        /*movement = mainCamera.TransformDirection(movement);
-        Vector2 facingDirection = new Vector2(movement.x, 0);
-        transform.up = facingDirection;*/
-        
+    { 
         rb.velocity = movement;
+    }
+
+    public void Respawn()
+    {
+        //instead of destroying the player the game will just move the player to a checkpoint which is an empty game object.
+        transform.position = checkpoint.transform.position; 
     }
 
     private bool IsGrounded()
