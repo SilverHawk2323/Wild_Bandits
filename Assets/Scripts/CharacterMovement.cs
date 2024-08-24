@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
     public Transform mainCamera;
 
     public float walkSpeed;
-    public float runSpeed;
+    public float dashPower;
     public float crouchSpeed;
     public float jumpPower;
     public float gravity;
@@ -42,9 +42,10 @@ public class CharacterMovement : MonoBehaviour
 
         speedThisFrame = walkSpeed;
 
-        if (Input.GetButton("Sprint"))
+        if (Input.GetButtonDown("Dash"))
         {
-            speedThisFrame = runSpeed;
+            //speedThisFrame = runSpeed;
+            movementThisFrame.x *= dashPower;
         }
 
         if (Input.GetButton("Crouch"))
@@ -60,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Input.GetButton("Jump"))
             {
-                movementThisFrame.y = jumpPower;
+                movementThisFrame.y = jumpPower; 
             }
         }
 
