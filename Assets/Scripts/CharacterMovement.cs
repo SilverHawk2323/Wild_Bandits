@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public float walkSpeed;
-    public float dashPower; 
+    public float dashPower;
     public float crouchSpeed;
     public float jumpPower;
     public float gravity;
@@ -41,7 +41,7 @@ public class CharacterMovement : MonoBehaviour
 
         speedThisFrame = walkSpeed;
 
-        if (Input.GetButtonDown("Dash")) // feel free to comment it out or delete it 
+        /*if (Input.GetButtonDown("Dash")) // feel free to comment it out or delete it 
         {
             movementThisFrame.x *= dashPower;
         }
@@ -49,7 +49,10 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetButton("Crouch"))
         {
             speedThisFrame = crouchSpeed;
-        }
+        }*/
+
+
+
 
         movementThisFrame *= speedThisFrame;
 
@@ -59,26 +62,37 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Input.GetButton("Jump"))
             {
-                movementThisFrame.y = jumpPower; 
+                movementThisFrame.y = jumpPower;
             }
         }
 
         Move(movementThisFrame);
+
+        if (IsGrounded() == false)
+        {
+            if (Input.GetButton("Glide"))
+            {
+                rb.gravityScale = 0.2f;
+            }
+        }
+
+
     }
 
-    private void Move (Vector2 movement)
-    { 
+    private void Move(Vector2 movement)
+    {
         rb.velocity = movement;
     }
 
     public void Respawn()
     {
         //instead of destroying the player the game will just move the player to a checkpoint which is an empty game object.
-        transform.position = checkpoint.transform.position; 
+        transform.position = checkpoint.transform.position;
     }
 
     private bool IsGrounded()
     {
+        rb.gravityScale = 1;
         return Physics2D.Raycast(transform.position, Vector2.down, 1.05f, groundedMask);
     }
 

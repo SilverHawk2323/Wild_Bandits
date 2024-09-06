@@ -473,16 +473,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
       propertyPath: gravity
-      value: 20
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
+      propertyPath: dashPower
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
       propertyPath: jumpPower
-      value: 10
+      value: 6.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
+      propertyPath: walkSpeed
+      value: 8.5
       objectReference: {fileID: 0}
     - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 803394199}
+    - target: {fileID: 3383526734340249430, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
+      propertyPath: crouchSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3862837253833076867, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.0966196
@@ -528,13 +540,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
     m_RemovedComponents:
-    - {fileID: 4987097542343171293, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2146346565690388802, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2101484743}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
 --- !u!1 &427109099
 GameObject:
@@ -651,7 +660,7 @@ GameObject:
   - component: {fileID: 617690054}
   - component: {fileID: 617690055}
   m_Layer: 0
-  m_Name: Square (4)
+  m_Name: Lawnmower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1017,7 +1026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2101484737}
-  zoom: 5
+  zoom: 3
 --- !u!1 &791637208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1141,7 +1150,7 @@ GameObject:
   - component: {fileID: 810642311}
   - component: {fileID: 810642312}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: Rake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1283,7 +1292,7 @@ GameObject:
   - component: {fileID: 971250525}
   - component: {fileID: 971250524}
   m_Layer: 6
-  m_Name: Square (6)
+  m_Name: Bin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1467,7 +1476,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 0.5
 --- !u!1 &1010284590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,7 +1690,7 @@ GameObject:
   - component: {fileID: 1294293172}
   - component: {fileID: 1294293173}
   m_Layer: 0
-  m_Name: Square (7)
+  m_Name: Dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,7 +1711,7 @@ MonoBehaviour:
   pointA: {fileID: 1970058111}
   pointB: {fileID: 1001695126}
   currentPoint: {fileID: 0}
-  speed: 1.2
+  speed: 6.5
   rb: {fileID: 0}
 --- !u!61 &1294293169
 BoxCollider2D:
@@ -1868,7 +1877,7 @@ GameObject:
   - component: {fileID: 1704795257}
   - component: {fileID: 1704795260}
   m_Layer: 6
-  m_Name: Square (8)
+  m_Name: Fruit Tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2011,7 +2020,7 @@ GameObject:
   - component: {fileID: 1741893444}
   - component: {fileID: 1741893446}
   m_Layer: 6
-  m_Name: Square (3)
+  m_Name: Stump
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2325,47 +2334,12 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 0.5
 --- !u!1 &2101484737 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2146346565690388802, guid: f68b8c75d3906e24783bbf5af275c91f, type: 3}
   m_PrefabInstance: {fileID: 325084505}
   m_PrefabAsset: {fileID: 0}
---- !u!58 &2101484743
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101484737}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
