@@ -60,7 +60,7 @@ public class CharacterMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-            if (Input.GetButton("Jump"))
+            if (Input.GetButtonDown("Jump"))
             {
                 movementThisFrame.y = jumpPower;
             }
@@ -68,11 +68,11 @@ public class CharacterMovement : MonoBehaviour
 
         Move(movementThisFrame);
 
-        if (IsGrounded() == false)
+        if (IsGroundedGlide() == false)
         {
             if (Input.GetButton("Glide"))
             {
-                rb.gravityScale = 0.2f;
+                rb.gravityScale = 0.3f;
             }
         }
 
@@ -92,8 +92,12 @@ public class CharacterMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        rb.gravityScale = 1;
-        return Physics2D.Raycast(transform.position, Vector2.down, 1.05f, groundedMask);
+        return Physics2D.Raycast(transform.position, Vector2.down, 0.55f, groundedMask);
     }
 
+    private bool IsGroundedGlide()
+    {
+        rb.gravityScale = 1;
+        return Physics2D.Raycast(transform.position, Vector2.down, 2.5f, groundedMask);
+    }
 }
