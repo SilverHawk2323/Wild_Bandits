@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PauseGame : MonoBehaviour
 {
@@ -50,5 +51,10 @@ public class PauseGame : MonoBehaviour
     {
         PauseMenu.SetActive(true);
         gamePaused = true;
+    }
+
+    public void ExitMenuClick()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
