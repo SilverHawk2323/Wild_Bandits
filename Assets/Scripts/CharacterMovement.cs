@@ -54,7 +54,7 @@ public class CharacterMovement : MonoBehaviour
 
 
 
-        movementThisFrame *= speedThisFrame;
+        movementThisFrame *= speedThisFrame * 1 + Time.deltaTime;
 
         movementThisFrame.y = rb.velocity.y - gravity * Time.deltaTime;
 
