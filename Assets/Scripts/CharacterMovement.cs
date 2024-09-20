@@ -51,7 +51,14 @@ public class CharacterMovement : MonoBehaviour
             speedThisFrame = crouchSpeed;
         }*/
 
-
+        if (inputThisFrame.x < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
 
 
         movementThisFrame *= speedThisFrame * 1 + Time.deltaTime;

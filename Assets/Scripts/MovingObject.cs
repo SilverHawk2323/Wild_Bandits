@@ -61,11 +61,13 @@ public class MovingObject : MonoBehaviour
             if (currentPoint == pointA)
             {
                 currentPoint = pointB;
+                transform.rotation = Quaternion.Euler(0f, 180f, 0f);
                 Debug.Log("Reached Point A");
             }
             else
             {
                 currentPoint = pointA;
+                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
             }
             
         }
