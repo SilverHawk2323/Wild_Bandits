@@ -79,7 +79,7 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Input.GetButton("Glide"))
             {
-                rb.gravityScale = 0.3f;
+                rb.gravityScale = 0.5f;
             }
         }
 
