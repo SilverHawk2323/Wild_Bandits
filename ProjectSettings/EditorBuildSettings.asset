@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 48d0d218ce6a665409afeb8958f22db5
   - enabled: 1
-    path: Assets/Scenes/WinScreen.unity
-    guid: 0869f4a5641a0bc4483cb6607619f442
-  - enabled: 1
     path: Assets/Scenes/Blockout.unity
     guid: 4c007dee8fd6529449c4b2d6010ff44f
+  - enabled: 1
+    path: Assets/Scenes/WinScreen.unity
+    guid: 0869f4a5641a0bc4483cb6607619f442
   m_configObjects: {}
