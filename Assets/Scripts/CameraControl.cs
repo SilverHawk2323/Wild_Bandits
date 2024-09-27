@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
+    public GameObject background;
     public GameObject player;
     public float zoom;
 
@@ -18,5 +19,6 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 3f, -10);
+        background.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 3.399f, player.transform.position.z);
     }
 }
